@@ -2,30 +2,30 @@
 //  PhotoDetailView.swift
 //  Photos
 //
-//  Created by Christina S on 11/9/19.
-//  Copyright © 2019 Christina. All rights reserved.
+//  Created by Christina Schell on 11/9/19.
+//  Copyright © 2019 Schelly. All rights reserved.
 //
 
 import SwiftUI
 
 struct PhotoDetailView: View {
-    var photo: Photo
-    init(_ photo: Photo) {
+    var photo: Photo2
+    init(_ photo: Photo2) {
         self.photo = photo
     }
     var body: some View {
         VStack(spacing: 40) {
-            RoundedRectImage(photo.image)
+            DetailImageLoadingView(photo.downloadUrl)
             VStack(alignment: .leading, spacing: 5) {
                 HStack {
-                    Text(photo.thumb.capitalized)
+                    Text(photo.author)
                         .font(.title)
                         .padding(.trailing, 10)
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
                 }
                 HStack {
-                    Text(photo.title)
+                    Text(photo.url)
                     Spacer()
                 }
             }.padding()
@@ -36,6 +36,6 @@ struct PhotoDetailView: View {
 
 struct PhotoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoDetailView(photoData[1])
+        PhotoDetailView(photoData2[1])
     }
 }
