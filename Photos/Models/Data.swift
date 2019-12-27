@@ -2,14 +2,15 @@
 //  Data.swift
 //  Photos
 //
-//  Created by Christina S on 11/9/19.
-//  Copyright © 2019 Christina. All rights reserved.
+//  Created by Christina Schell on 11/9/19.
+//  Copyright © 2019 Schelly. All rights reserved.
 //
 
 import Foundation
 import SwiftUI
 
 let photoData: [Photo] = load("photosLocal.json")
+let photoData2: [Photo2] = load("photos.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

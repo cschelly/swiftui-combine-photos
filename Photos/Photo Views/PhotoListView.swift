@@ -2,8 +2,8 @@
 //  PhotoListView.swift
 //  Photos
 //
-//  Created by Christina S on 11/9/19.
-//  Copyright © 2019 Christina. All rights reserved.
+//  Created by Christina Schell on 11/9/19.
+//  Copyright © 2019 Schelly. All rights reserved.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct PhotoListView: View {
     var body: some View {
         NavigationView {
-            List(photoData) { photo in
+            List(photoData2) { photo in
                 NavigationLink(destination: PhotoDetailView(photo)) {
                     PhotoRow(photo)
                 }

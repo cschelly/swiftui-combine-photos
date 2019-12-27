@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  Photos
 //
-//  Created by Christina S on 11/8/19.
-//  Copyright © 2019 Christina. All rights reserved.
+//  Created by Christina Schell on 11/8/19.
+//  Copyright © 2019 Schelly. All rights reserved.
 //
 
 import UIKit
