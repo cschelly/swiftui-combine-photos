@@ -34,6 +34,6 @@ struct ThumbnailImageLoadingView: View {
 
 struct ThumbnailImageLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        ThumbnailImageLoadingView(photoData2[0].downloadUrl)
+        ThumbnailImageLoadingView(photosDefault.hits[0].previewURL)
     }
 }

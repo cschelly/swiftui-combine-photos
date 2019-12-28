@@ -9,25 +9,24 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
-    var photo: Photo2
-    init(_ photo: Photo2) {
+    var photo: Photo
+    init(_ photo: Photo) {
         self.photo = photo
     }
     var body: some View {
-        VStack(spacing: 40) {
-            DetailImageLoadingView(photo.downloadUrl)
+        VStack(alignment: .leading, spacing: 40) {
+            DetailImageLoadingView(photo.largeImageURL)
             VStack(alignment: .leading, spacing: 5) {
                 HStack {
-                    Text(photo.author)
-                        .font(.title)
-                        .padding(.trailing, 10)
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
+                    IconView(iconName: "heart.fill", statistic: photo.favorites, color: .red)
+                    IconView(iconName: "bubble.left.fill", statistic: photo.comments)
                 }
                 HStack {
-                    Text(photo.url)
-                    Spacer()
+                    Text(photo.pageURL.title)
+                        .font(.headline)
+                        .padding(.trailing, 10)
                 }
+                Text(photo.user)
             }.padding()
             Spacer()
         }.padding(.top, 15)
@@ -36,6 +35,8 @@ struct PhotoDetailView: View {
 
 struct PhotoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoDetailView(photoData2[1])
+        PhotoDetailView(photosDefault.hits[0])
     }
 }
+
+

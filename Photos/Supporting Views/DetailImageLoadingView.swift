@@ -37,6 +37,6 @@ struct DetailImageLoadingView: View {
 
 struct DetailImageLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailImageLoadingView(photoData2[0].downloadUrl)
+        DetailImageLoadingView(photosDefault.hits[0].largeImageURL)
     }
 }

@@ -9,19 +9,25 @@
 import SwiftUI
 
 struct PhotoListView: View {
+    @EnvironmentObject var viewModel: PhotosViewModel
+    @State private var searchTerm: String = ""
     var body: some View {
         NavigationView {
-            List(photoData2) { photo in
-                NavigationLink(destination: PhotoDetailView(photo)) {
-                    PhotoRow(photo)
+            VStack {
+                SearchBar(searchString: $searchTerm).environmentObject(self.viewModel)
+                List(viewModel.photos) { photo in
+                    NavigationLink(destination: PhotoDetailView(photo)) {
+                        PhotoRow(photo)
+                    }
                 }
-            }.navigationBarTitle("Photos")
+            }
+            .navigationBarTitle("Photos")
         }
     }
 }
 
 struct PhotoListView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoListView()
+        PhotoListView().environmentObject(PhotosViewModel())
     }
 }

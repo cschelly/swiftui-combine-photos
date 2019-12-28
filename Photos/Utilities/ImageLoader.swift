@@ -25,6 +25,7 @@ final class ImageLoader: ObservableObject {
     }
     
     deinit {
+
         cancellable?.cancel()
     }
     
@@ -37,6 +38,7 @@ final class ImageLoader: ObservableObject {
                 guard let image = UIImage(data: data) else {
                     throw ImageLoadingError.incorrectData
                 }
+                
                 
                 return image
             }

@@ -9,8 +9,7 @@
 import Foundation
 import SwiftUI
 
-let photoData: [Photo] = load("photosLocal.json")
-let photoData2: [Photo2] = load("photos.json")
+let photosDefault: PhotoData = load("default.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
